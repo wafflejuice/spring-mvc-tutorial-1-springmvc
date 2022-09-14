@@ -29,7 +29,7 @@ class RequestHeaderController {
         logger.info("request=${request}")
         logger.info("response=${response}")
         logger.info("httpMethod=${httpMethod}")
-        logger.info("local=${locale}")
+        logger.info("locale=${locale}")
         logger.info("headerMap=${headerMap}")
         logger.info("host=${host}")
         logger.info("cookie=${cookie}")
