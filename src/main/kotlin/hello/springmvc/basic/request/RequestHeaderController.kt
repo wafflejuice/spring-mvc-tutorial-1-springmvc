@@ -21,7 +21,7 @@ class RequestHeaderController {
         request: HttpServletRequest,
         response: HttpServletResponse,
         httpMethod: HttpMethod,
-        local: Locale,
+        locale: Locale,
         @RequestHeader headerMap: MultiValueMap<String, String>,
         @RequestHeader("host") host: String,
         @CookieValue(value = "myCookie", required = false) cookie: String?
@@ -29,7 +29,7 @@ class RequestHeaderController {
         logger.info("request=${request}")
         logger.info("response=${response}")
         logger.info("httpMethod=${httpMethod}")
-        logger.info("local=${local}")
+        logger.info("local=${locale}")
         logger.info("headerMap=${headerMap}")
         logger.info("host=${host}")
         logger.info("cookie=${cookie}")
