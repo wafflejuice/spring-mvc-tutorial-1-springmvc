@@ -2,7 +2,9 @@ package hello.springmvc.basic.request
 
 import Slf4j
 import Slf4j.Companion.logger
+import hello.springmvc.basic.HelloData
 import org.springframework.stereotype.Controller
+import org.springframework.web.bind.annotation.ModelAttribute
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.ResponseBody
@@ -86,6 +88,22 @@ class RequestParamController {
         @RequestParam paramMap: Map<String, Any>,
     ): String {
         logger.info("username=${paramMap["username"]}, age=${paramMap["age"]}")
+
+        return "ok"
+    }
+
+    @ResponseBody
+    @RequestMapping("/model-attribute-v1")
+    fun modelAttributeV1(@ModelAttribute helloData: HelloData): String {
+        logger.info("username=${helloData.username} age=${helloData.age}")
+
+        return "ok"
+    }
+
+    @ResponseBody
+    @RequestMapping("/model-attribute-v2")
+    fun modelAttributeV2(helloData: HelloData): String {
+        logger.info("username=${helloData.username} age=${helloData.age}")
 
         return "ok"
     }
